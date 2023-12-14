@@ -17,10 +17,20 @@ int main()
 		{
 			if (event.type == Event::Closed) win.close(); // Закрыть окно
 		}
+		Vector2i mouse = Mouse::getPosition(win);
+		if (Mouse::isButtonPressed(Mouse::Left)) {
+			if (csp.getGlobalBounds().contains(mouse.x, mouse.y))
+			{
+
+			}
+		}
+		csp.getGlobalBounds().
 		win.clear();
 		win.draw(csp);
 		win.display();
 	}
+
+
 
 }
 
