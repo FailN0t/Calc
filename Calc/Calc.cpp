@@ -11,7 +11,7 @@ int main()
 	Event event;
 	CircleShape csp(100);
 	csp.setFillColor(Color::Red);
-
+	int i = 20;
 	while (win.isOpen()) {
 		while (win.pollEvent(event))  // Цикл игровых событий: нажатие клавишь, перемещение мышки и другие.
 		{
@@ -21,10 +21,13 @@ int main()
 		if (Mouse::isButtonPressed(Mouse::Left)) {
 			if (csp.getGlobalBounds().contains(mouse.x, mouse.y))
 			{
-
+				i += 20;
+				if (i > 254) {
+					i = 20;
+				}
+				csp.setFillColor(Color(0,i,0));
 			}
 		}
-		csp.getGlobalBounds().
 		win.clear();
 		win.draw(csp);
 		win.display();
