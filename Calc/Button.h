@@ -7,8 +7,10 @@ using namespace sf;
 
 class Butt {
 	int i = 0;
+	Font font;
+	
 	RectangleShape butt;
-	String text = "asdas";
+	String text = to_string(i);
 	Text txt;
 	Color color1;
 	Color color2 = Color::Blue;
@@ -20,9 +22,11 @@ public:
 		color1 = color;
 		butt.setFillColor(color1);
 		txt.setString(text);
-		txt.setPosition(0, 0);
+		txt.setPosition(x+25, y+15);
 		txt.setFillColor(Color::White);
 		txt.setCharacterSize(20);
+		font.loadFromFile("BankGothic Md BT Medium.otf");
+		txt.setFont(font);
 	}
 	Butt():Butt(0,0,50, 30, Color::Cyan) {}
 
@@ -37,6 +41,8 @@ public:
 				{
 					
 					butt.setFillColor(color3);
+					i++;
+					txt.setString(to_string(i));
 				}
 
 			}
