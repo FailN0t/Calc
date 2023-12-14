@@ -14,28 +14,7 @@ int main()
 		while (win.pollEvent(event))  // Цикл игровых событий: нажатие клавишь, перемещение мышки и другие.
 		{
 			if (event.type == Event::Closed) win.close(); // Закрыть окно
-			if (event.type == Event::MouseButtonPressed) {
-				if (event.key.code == Mouse::Left) {
-					if (csp.getGlobalBounds().contains(Mouse::getPosition(win).x, Mouse::getPosition(win).y))
-					{
-						i += 20;
-						if (i > 254) {
-							i = 20;
-						}
-						csp.setFillColor(Color(0, i, 0));
-					}
-					
-				}
-			}
-			else {
-				if (csp.getGlobalBounds().contains(Mouse::getPosition(win).x, Mouse::getPosition(win).y))
-				{
-					csp.setFillColor(Color::Blue);
-				}
-				else {
-					csp.setFillColor(Color::Red);
-				}
-			}
+			butt.mousePresBut(win, event);
 		}
 		win.clear();
 		win.draw(csp);
