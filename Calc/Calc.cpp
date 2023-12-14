@@ -1,9 +1,7 @@
 ﻿// Calc.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <iostream>
 #include "Button.h"
-using namespace std;
 int main()
 {
 	RenderWindow win(VideoMode(600, 800), "Calc");
