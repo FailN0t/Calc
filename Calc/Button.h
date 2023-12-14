@@ -20,5 +20,5 @@ public:
 	void printButt(RenderWindow& win) {
 		win.draw(butt);
 	}
-
+	void 
 };
