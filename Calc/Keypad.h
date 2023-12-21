@@ -49,6 +49,9 @@ public:
 		button[1][3].rename("+");
 		button[2][3].rename("-");
 		button[3][3].rename("=");
+		button[0][3].rename("C");
+		button[3][1].rename("*");
+		button[3][2].rename("/");
 
 	}
 

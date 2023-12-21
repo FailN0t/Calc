@@ -18,16 +18,38 @@ public:
 			this->str = ""; 
 			chitst = false;
 		}
+		if (str == "C") {
+			a = "";
+			b = "";
+			z = "";
+			this->str = "";
+			return;
+		}
+		
 		if (str != "="
 			and str != "+"
 			and str != "-"
+			and str != "*"
+			and str != "/"
 			and z.empty() ){
 			a += str;
 			this->str += str;
 		}
 		else if ((str == "+"
 			or str == "-")
-			and b.empty()) {
+			and a.empty()){
+			if (str == "-") {
+				a += str;
+				this->str += str;
+			}
+
+		}
+		else if ((str == "+"
+			or str == "-"
+			or str == "*"
+			or str == "/")
+			and b.empty()
+			and !a.empty()) {
 			if (z.empty()) {
 				z = str;
 				this->str += str;
@@ -42,6 +64,8 @@ public:
 		else if (str != "="
 			and str != "+"
 			and str != "-"
+			and str != "*"
+			and str != "/"
 			and !z.empty()) {
 			b += str;
 			this->str += str;
@@ -63,6 +87,16 @@ public:
 					break;
 				case '-':
 					this->str = to_string(stof(a) - stof(b));
+					break;
+				case '*':
+					this->str = to_string(stof(a) * stof(b));
+					break;
+				case '/':
+					if (stof(b) == 0) {
+						this->str = "ERROR";
+						break;
+					}
+					this->str = to_string(stof(a) / stof(b));
 					break;
 				default:
 					break;
