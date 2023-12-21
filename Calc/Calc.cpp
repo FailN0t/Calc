@@ -1,24 +1,23 @@
 ﻿// Calc.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include "Button.h"
+#include "Keypad.h"
 int main()
 {
 	RenderWindow win(VideoMode(600, 800), "Calc");
 	Event event;
-	CircleShape csp(100);
-	csp.setFillColor(Color::Red);
 	int i = 20;
-	Butt butt(300, 400, 120, 70, Color::Magenta);
+	win.setFramerateLimit(30);
+	Butt butt(300, 400, 120, 70, Color::Magenta, "9");
+	KeyPad keyPad(4, 4, 600, 800);
 	while (win.isOpen()) {
 		while (win.pollEvent(event))  // Цикл игровых событий: нажатие клавишь, перемещение мышки и другие.
 		{
 			if (event.type == Event::Closed) win.close(); // Закрыть окно
-			butt.mousePresBut(win, event);
+			keyPad.mousePresKeyPad(win, event);
 		}
 		win.clear();
-		win.draw(csp);
-		butt.printButt(win);
+		keyPad.print(win);
 		win.display();
 	}
 

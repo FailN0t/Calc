@@ -6,17 +6,15 @@ using namespace sf;
 
 
 class Butt {
-	int i = 0;
 	Font font;
 	
 	RectangleShape butt;
-	String text = to_string(i);
 	Text txt;
 	Color color1;
 	Color color2 = Color::Blue;
 	Color color3 = Color::Green;
 public:
-	Butt(int x, int y, int width, int height, Color color){
+	Butt(int x, int y, int width, int height, Color color, String text){
 		butt.setPosition(x, y);
 		butt.setSize(Vector2f(width, height));
 		color1 = color;
@@ -28,7 +26,26 @@ public:
 		font.loadFromFile("BankGothic Md BT Medium.otf");
 		txt.setFont(font);
 	}
-	Butt():Butt(0,0,50, 30, Color::Cyan) {}
+	Butt() :Butt(0, 0, 50, 30, Color::Cyan, "FF") {}
+
+	void resize(float widht, float hieght, int row, int column, int i, int j, float ots) { 
+		float widBot = widht / column;
+		float hiBot = (hieght - ots) / row;
+		float gap = 5;
+		float x = widBot * j + gap;
+		float y = hiBot * i + gap + ots;
+		butt.setPosition(x, y);
+		butt.setSize(Vector2f(widBot - (2 * gap), hiBot - (2 * gap)));
+		Vector2f centerButt = Vector2f(x + widBot / 2, y + hiBot / 2);
+		txt.setPosition(centerButt.x - txt.getGlobalBounds().width*2, centerButt.y - txt.getGlobalBounds().height*4);
+		txt.setCharacterSize(60);
+	}
+
+	void rename(String text) {
+
+		txt.setString(text);
+
+	}
 
 	void printButt(RenderWindow& win) {
 		win.draw(butt);
@@ -39,10 +56,7 @@ public:
 			if (event.key.code == Mouse::Left) {
 				if (butt.getGlobalBounds().contains(Mouse::getPosition(win).x, Mouse::getPosition(win).y))
 				{
-					
 					butt.setFillColor(color3);
-					i++;
-					txt.setString(to_string(i));
 				}
 
 			}
