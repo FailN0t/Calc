@@ -11,6 +11,6 @@ public:
 	Disp() {
 		font.loadFromFile("BankGothic Md BT Medium.otf");
 		txt.setFont(font);
-		txt.
+		txt.setString()
 	}
 };

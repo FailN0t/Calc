@@ -110,4 +110,7 @@ public:
 
 		cout << this->str << endl;
 	}
+	string getStr() {
+		return this->str;
+	}
 };
