@@ -27,11 +27,11 @@ public:
 			}
 		}
 	}
-	void mousePresKeyPad(RenderWindow& win, Event& event) {
+	void mousePresKeyPad(RenderWindow& win, Event& event, Strok& strok) {
 		for (size_t i = 0; i < row; i++)
 		{
 			for (size_t j = 0; j < column; j++) {
-				button[i][j].mousePresBut(win, event);
+				button[i][j].mousePresBut(win, event, strok);
 			}
 		}
 	}

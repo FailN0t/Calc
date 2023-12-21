@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include "Strok.h"
 #include <iostream>
 using namespace std;
 using namespace sf;
@@ -7,7 +8,6 @@ using namespace sf;
 
 class Butt {
 	Font font;
-	
 	RectangleShape butt;
 	Text txt;
 	Color color1;
@@ -51,12 +51,13 @@ public:
 		win.draw(butt);
 		win.draw(txt);
 	}
-	void mousePresBut(RenderWindow& win, Event& event) {
+	void mousePresBut(RenderWindow& win, Event& event, Strok& strok) {
 		if (event.type == Event::MouseButtonPressed) {
 			if (event.key.code == Mouse::Left) {
 				if (butt.getGlobalBounds().contains(Mouse::getPosition(win).x, Mouse::getPosition(win).y))
 				{
 					butt.setFillColor(color3);
+					strok.add(txt.getString());
 				}
 
 			}

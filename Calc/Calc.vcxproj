@@ -134,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Disp.h" />
+    <ClInclude Include="Keypad.h" />
+    <ClInclude Include="Strok.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="BankGothic Md BT Medium.otf" />
