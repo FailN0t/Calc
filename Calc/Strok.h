@@ -7,12 +7,17 @@ class Strok {
 	string a;
 	string b;
 	string z;
+	bool chitst = false;
 public:
 	Strok() {
 		str = "";
 	}
 
 	void add(string str) {
+		if (chitst) { 
+			this->str = ""; 
+			chitst = false;
+		}
 		if (str != "="
 			and str != "+"
 			and str != "-"
@@ -42,6 +47,33 @@ public:
 			this->str += str;
 
 		}
+		else if (str == "=") {
+			if (b.empty()) {
+				this->str = a;
+				a = "";
+				b = "";
+				z = "";
+				chitst = true;
+			}
+			else {
+				switch (z[0])
+				{
+				case '+':
+					this->str = to_string(stof(a) + stof(b));
+					break;
+				case '-':
+					this->str = to_string(stof(a) - stof(b));
+					break;
+				default:
+					break;
+				}
+				a = "";
+				b = "";
+				z = "";
+				chitst = true;
+			}
+		}
+
 		cout << this->str << endl;
 	}
 };

@@ -31,7 +31,7 @@ public:
 	void resize(float widht, float hieght, int row, int column, int i, int j, float ots) { 
 		float widBot = widht / column;
 		float hiBot = (hieght - ots) / row;
-		float gap = 5;
+		float gap = 10;
 		float x = widBot * j + gap;
 		float y = hiBot * i + gap + ots;
 		butt.setPosition(x, y);

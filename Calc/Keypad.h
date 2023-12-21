@@ -12,7 +12,7 @@ public:
 			button[i] = new Butt[column];
 			for (size_t j = 0; j < column; j++)
 			{
-				button[i][j].resize(width, hieght, row, column, i, j, 200);
+				button[i][j].resize(width, hieght, row, column, i, j, 400);
 			}
 		}
 		nump();
@@ -46,6 +46,10 @@ public:
 			}
 		}
 		button[3][0].rename("0");
+		button[1][3].rename("+");
+		button[2][3].rename("-");
+		button[3][3].rename("=");
+
 	}
 
 	~KeyPad(){
