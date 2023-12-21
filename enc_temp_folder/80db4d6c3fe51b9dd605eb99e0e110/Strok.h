@@ -26,7 +26,7 @@ public:
 			return;
 		}
 		
-		if (str != "="//здесь //добавить по аналогии
+		if (str != "="
 			and str != "+"
 			and str != "-"
 			and str != "*"
@@ -35,7 +35,7 @@ public:
 			a += str;
 			this->str += str;
 		}
-		else if ((str == "+"//это не трогать отрабатываем первый минус
+		else if ((str == "+"
 			or str == "-")
 			and a.empty()){
 			if (str == "-") {
@@ -44,7 +44,7 @@ public:
 			}
 
 		}
-		else if ((str == "+"//добавить по аналогии
+		else if ((str == "+"
 			or str == "-"
 			or str == "*"
 			or str == "/")
@@ -61,7 +61,7 @@ public:
 			
 
 		}
-		else if (str != "="//добавить по аналогии
+		else if (str != "="
 			and str != "+"
 			and str != "-"
 			and str != "*"
@@ -80,7 +80,7 @@ public:
 				chitst = true;
 			}
 			else {
-				switch (z[0])//добавить по аналогии->
+				switch (z[0])
 				{
 				case '+':
 					this->str = to_string(stof(a) + stof(b));

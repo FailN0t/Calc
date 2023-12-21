@@ -24,7 +24,7 @@ int main()
 		win.display();
 	}
 
-
+	//переходим в nump() d KeyPad
 
 }
 
