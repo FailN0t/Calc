@@ -10,7 +10,7 @@ int main()
 	int i = 20;
 	win.setFramerateLimit(30);
 	Butt butt(300, 400, 120, 70, Color::Magenta, "9");
-	KeyPad keyPad(4, 4, 600, 800);
+	KeyPad keyPad(5, 4, 600, 800);
 	Disp disp;
 	while (win.isOpen()) {
 		while (win.pollEvent(event))  // Цикл игровых событий: нажатие клавишь, перемещение мышки и другие.
