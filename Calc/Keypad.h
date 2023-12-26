@@ -1,15 +1,15 @@
 #pragma once
-#include "Button.h"
+#include "Button2.h"
 class KeyPad {
-	Butt** button;
+	Button2 **button;
 	int row;
 	int column;
 public:
 	KeyPad(int row, int column, int width, int hieght) :row{ row }, column{column} {
-		button = new Butt*[row];
+		button = new Button2*[row];
 		for (size_t i = 0; i < row; i++)
 		{
-			button[i] = new Butt[column];
+			button[i] = new Button2[column];
 			for (size_t j = 0; j < column; j++)
 			{
 				button[i][j].resize(width, hieght, row, column, i, j, 400);
@@ -23,7 +23,7 @@ public:
 		for (size_t i = 0; i < row; i++)
 		{
 			for (size_t j = 0; j < column; j++) {
-				button[i][j].printButt(win);
+				button[i][j].printButton2(win);
 			}
 		}
 	}
