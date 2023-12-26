@@ -7,6 +7,7 @@ using namespace sf;
 
 
 class Butt {
+protected:
 	Font font;
 	RectangleShape butt;
 	Text txt;

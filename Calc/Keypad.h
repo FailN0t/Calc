@@ -53,6 +53,7 @@ public:
 		button[3][1].rename("*");
 		button[3][2].rename("/");
 
+		//переходим в Strok
 	}
 
 	~KeyPad(){

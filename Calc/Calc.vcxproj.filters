@@ -39,4 +39,9 @@
   <ItemGroup>
     <Font Include="BankGothic Md BT Medium.otf" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="but.jpg">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
